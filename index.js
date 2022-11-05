@@ -1,4 +1,4 @@
-require('./db/conn')
+require('/var/task/db/conn')
 const express = require("express")
 const app = express()
 const http = require("http")
@@ -55,6 +55,6 @@ io.on("connection", socket => {
     socket.on('append_player', async (room, name, cb) => join_room(room, false, {id: socket.id, name:name}, socket, io, cb))
 })
 
-server.listen(process.env.PORT || 3000, () => {
+server.listen(process.env.PORT || 3000, '0.0.0.0',  () => {
     console.log('Server is running');
 })
