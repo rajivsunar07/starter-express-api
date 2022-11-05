@@ -1,4 +1,7 @@
-require('/var/task/db/conn')
+const mongoose = require('mongoose')
+require('dotenv').config();
+mongoose.connect(`mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.tipue5a.mongodb.net/bingo?retryWrites=true&w=majority`)
+
 const express = require("express")
 const app = express()
 const http = require("http")
